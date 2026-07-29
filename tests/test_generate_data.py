@@ -57,3 +57,63 @@ def test_follow_up_is_nonnegative() -> None:
     assert np.all(
         data["follow_up_time"] >= 0
     )
+
+def test_same_seed_produces_same_data() -> None:
+    first = simulate_credit_survival_data(
+        sample_size=100,
+        seed=25,
+    )
+
+    second = simulate_credit_survival_data(
+        sample_size=100,
+        seed=25,
+    )
+
+    assert first.equals(second)
+
+
+def test_different_seeds_produce_different_data() -> None:
+    first = simulate_credit_survival_data(
+        sample_size=100,
+        seed=25,
+    )
+
+    second = simulate_credit_survival_data(
+        sample_size=100,
+        seed=26,
+    )
+
+    assert not first.equals(second)
+
+
+def test_larger_entry_scale_increases_mean_entry() -> None:
+    early_entry = simulate_credit_survival_data(
+        sample_size=1000,
+        entry_scale=0.25,
+        seed=40,
+    )
+
+    late_entry = simulate_credit_survival_data(
+        sample_size=1000,
+        entry_scale=1.75,
+        seed=40,
+    )
+
+    assert (
+        late_entry["entry_time"].mean()
+        > early_entry["entry_time"].mean()
+    )
+
+
+def test_weibull_parameters_must_be_positive() -> None:
+    import pytest
+
+    with pytest.raises(ValueError):
+        simulate_credit_survival_data(
+            baseline_scale=0.0
+        )
+
+    with pytest.raises(ValueError):
+        simulate_credit_survival_data(
+            weibull_shape=0.0
+        )
