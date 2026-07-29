@@ -39,3 +39,6 @@ data/simulated/*
 # Generated figures
 reports/figures/*
 !reports/figures/.gitkeep
+
+# Generated model results
+reports/*.csv
