@@ -3,18 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
-
-
-FINAL_MODEL_FEATURES = [
-    "leverage",
-    "current_ratio",
-    "cash_ratio",
-    "return_on_assets",
-    "revenue_growth",
-    "operating_cash_flow_ratio",
-    "log_total_assets",
-    "operating_margin",
-]
+from src.features.constants import MODEL_FEATURES
 
 
 def load_survival_table(
@@ -50,7 +39,7 @@ def combine_survival_datasets(
     Combine bankrupt and censored-control survival intervals.
     """
     selected_features = (
-        FINAL_MODEL_FEATURES
+        MODEL_FEATURES
         if feature_columns is None
         else feature_columns
     )

@@ -1,0 +1,1202 @@
+[
+  {
+    "ticker": "AGO",
+    "name": "ASSURED GUARANTY LTD",
+    "cik": "0001273813",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "AGX",
+    "name": "ARGAN INC",
+    "cik": "0000100591",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "AII",
+    "name": "American Integrity Insurance Group, Inc.",
+    "cik": "0002007587",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ALLY",
+    "name": "Ally Financial Inc.",
+    "cik": "0000040729",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "AMCR",
+    "name": "Amcor plc",
+    "cik": "0001748790",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "APLE",
+    "name": "Apple Hospitality REIT, Inc.",
+    "cik": "0001418121",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ARMP",
+    "name": "Armata Pharmaceuticals, Inc.",
+    "cik": "0000921114",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ASM",
+    "name": "AVINO SILVER & GOLD MINES LTD",
+    "cik": "0000316888",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "AVY",
+    "name": "Avery Dennison Corp",
+    "cik": "0000008818",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "AWF",
+    "name": "ALLIANCEBERNSTEIN GLOBAL HIGH INCOME FUND INC",
+    "cik": "0000906013",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "B",
+    "name": "BARRICK MINING CORP",
+    "cik": "0000756894",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BCS",
+    "name": "BARCLAYS PLC",
+    "cik": "0000312069",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BG",
+    "name": "Bunge Global SA",
+    "cik": "0001996862",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BILL",
+    "name": "BILL Holdings, Inc.",
+    "cik": "0001786352",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BORR",
+    "name": "Borr Drilling Ltd",
+    "cik": "0001715497",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BRC",
+    "name": "BRADY CORP",
+    "cik": "0000746598",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "BXDC",
+    "name": "Blackstone Digital Infrastructure Trust Inc.",
+    "cik": "0002100161",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "CAPL",
+    "name": "CrossAmerica Partners LP",
+    "cik": "0001538849",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "CL",
+    "name": "COLGATE PALMOLIVE CO",
+    "cik": "0000021665",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "CNMD",
+    "name": "CONMED Corp",
+    "cik": "0000816956",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "COOK",
+    "name": "Traeger, Inc.",
+    "cik": "0001857853",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "CSR",
+    "name": "CENTERSPACE",
+    "cik": "0000798359",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DE",
+    "name": "DEERE & CO",
+    "cik": "0000315189",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DHR",
+    "name": "DANAHER CORP /DE/",
+    "cik": "0000313616",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DLY",
+    "name": "DoubleLine Yield Opportunities Fund",
+    "cik": "0001788399",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DMB",
+    "name": "BNY Mellon Municipal Bond Infrastructure Fund, Inc.",
+    "cik": "0001565381",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DVA",
+    "name": "DAVITA INC.",
+    "cik": "0000927066",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "DXC",
+    "name": "DXC Technology Co",
+    "cik": "0001688568",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "EPR",
+    "name": "EPR PROPERTIES",
+    "cik": "0001045450",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "EROK",
+    "name": "EagleRock Land, LLC",
+    "cik": "0002104882",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ETR",
+    "name": "ENTERGY CORP /DE/",
+    "cik": "0000065984",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ETW",
+    "name": "Eaton Vance Tax-Managed Global Buy-Write Opportunities Fund",
+    "cik": "0001322435",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "FCT",
+    "name": "FIRST TRUST SENIOR FLOATING RATE INCOME FUND II",
+    "cik": "0001282850",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "FIX",
+    "name": "COMFORT SYSTEMS USA INC",
+    "cik": "0001035983",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "FLC",
+    "name": "FLAHERTY & CRUMRINE TOTAL RETURN FUND INC",
+    "cik": "0001245648",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "GCV",
+    "name": "GABELLI CONVERTIBLE & INCOME SECURITIES FUND INC",
+    "cik": "0000845611",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "GHI",
+    "name": "Greystone Housing Impact Investors LP",
+    "cik": "0001059142",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "GNE",
+    "name": "Genie Energy Ltd.",
+    "cik": "0001528356",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "GPGI",
+    "name": "GPGI, Inc.",
+    "cik": "0001823144",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "GRMN",
+    "name": "GARMIN LTD",
+    "cik": "0001121788",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "HAL",
+    "name": "HALLIBURTON CO",
+    "cik": "0000045012",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "HEQ",
+    "name": "John Hancock Diversified Income Fund",
+    "cik": "0001496749",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "HIPO",
+    "name": "Hippo Holdings Inc.",
+    "cik": "0001828105",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "HPE",
+    "name": "Hewlett Packard Enterprise Co",
+    "cik": "0001645590",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "IAF",
+    "name": "ABRDN AUSTRALIA EQUITY FUND, INC.",
+    "cik": "0000779336",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "IPB",
+    "name": "MERRILL LYNCH DEPOSITOR INC INDEXPLUS TRUST SERIES 2003-1",
+    "cik": "0001267332",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ITUB",
+    "name": "Itau Unibanco Holding S.A.",
+    "cik": "0001132597",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "JHX",
+    "name": "James Hardie Industries plc",
+    "cik": "0001159152",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "KAPA",
+    "name": "Kairos Pharma, LTD.",
+    "cik": "0001962011",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "LAZ",
+    "name": "Lazard, Inc.",
+    "cik": "0001311370",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "LEO",
+    "name": "BNY MELLON STRATEGIC MUNICIPALS, INC.",
+    "cik": "0000818972",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "LPL",
+    "name": "LG Display Co., Ltd.",
+    "cik": "0001290109",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "MIAX",
+    "name": "MIAMI INTERNATIONAL HOLDINGS, INC.",
+    "cik": "0001438472",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "NKX",
+    "name": "NUVEEN CALIFORNIA AMT-FREE QUALITY MUNICIPAL INCOME FUND",
+    "cik": "0001195738",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "OGC",
+    "name": "OceanaGold Corp",
+    "cik": "0001487326",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "PAY",
+    "name": "Paymentus Holdings, Inc.",
+    "cik": "0001841156",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "PNFP",
+    "name": "Pinnacle Financial Partners, Inc.",
+    "cik": "0002082866",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "PSFE",
+    "name": "Paysafe Ltd",
+    "cik": "0001833835",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "RCG",
+    "name": "RENN Fund, Inc.",
+    "cik": "0000919567",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "RLI",
+    "name": "RLI CORP",
+    "cik": "0000084246",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "RMT",
+    "name": "ROYCE MICRO-CAP TRUST, INC.",
+    "cik": "0000912147",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "SRE",
+    "name": "SEMPRA",
+    "cik": "0001032208",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "SRFM",
+    "name": "SURF AIR MOBILITY INC.",
+    "cik": "0001936224",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "SRI",
+    "name": "STONERIDGE INC",
+    "cik": "0001043337",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "STM",
+    "name": "STMicroelectronics N.V.",
+    "cik": "0000932787",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "SXC",
+    "name": "SunCoke Energy, Inc.",
+    "cik": "0001514705",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "SYF",
+    "name": "Synchrony Financial",
+    "cik": "0001601712",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "TKO",
+    "name": "TKO Group Holdings, Inc.",
+    "cik": "0001973266",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "TOST",
+    "name": "Toast, Inc.",
+    "cik": "0001650164",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "TTAM",
+    "name": "Titan America SA",
+    "cik": "0002035304",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "TXO",
+    "name": "TXO Partners, L.P.",
+    "cik": "0001559432",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "UTI",
+    "name": "UNIVERSAL TECHNICAL INSTITUTE INC",
+    "cik": "0001261654",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "VHI",
+    "name": "VALHI INC /DE/",
+    "cik": "0000059255",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "VLN",
+    "name": "Valens Semiconductor Ltd.",
+    "cik": "0001863006",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "VLT",
+    "name": "Invesco High Income Trust II",
+    "cik": "0000846671",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "VOYG",
+    "name": "Voyager Technologies, Inc./TX",
+    "cik": "0001788060",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "VTMX",
+    "name": "Vesta Real Estate Corporation, S.A.B. de C.V.",
+    "cik": "0001969373",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "WIW",
+    "name": "WESTERN ASSET INFLATION-LINKED OPPORTUNITIES & INCOME FUND",
+    "cik": "0001267902",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "WOLF",
+    "name": "WOLFSPEED, INC.",
+    "cik": "0000895419",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "WSO",
+    "name": "WATSCO INC",
+    "cik": "0000105016",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "WTRG",
+    "name": "Essential Utilities, Inc.",
+    "cik": "0000078128",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "XPEV",
+    "name": "XPENG INC.",
+    "cik": "0001810997",
+    "sector": "Control candidate - NYSE"
+  },
+  {
+    "ticker": "ACON",
+    "name": "Aclarion, Inc.",
+    "cik": "0001635077",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "AFBI",
+    "name": "Affinity Bancshares, Inc.",
+    "cik": "0001823406",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ALDX",
+    "name": "Aldeyra Therapeutics, Inc.",
+    "cik": "0001341235",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ALMU",
+    "name": "Aeluma, Inc.",
+    "cik": "0001828805",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ANGO",
+    "name": "ANGIODYNAMICS INC",
+    "cik": "0001275187",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "APC",
+    "name": "ARKO Petroleum Corp.",
+    "cik": "0002080921",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ASTE",
+    "name": "ASTEC INDUSTRIES INC",
+    "cik": "0000792987",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "AZIO",
+    "name": "AZIO AI HOLDINGS, INC.",
+    "cik": "0001563568",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "BNTC",
+    "name": "Benitec Biopharma Inc.",
+    "cik": "0001808898",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "BSAA",
+    "name": "BEST SPAC I Acquisition Corp.",
+    "cik": "0002051587",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "BWFG",
+    "name": "Bankwell Financial Group, Inc.",
+    "cik": "0001505732",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "BYFC",
+    "name": "BROADWAY FINANCIAL CORP \\DE\\",
+    "cik": "0001001171",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CAE",
+    "name": "CAE INC",
+    "cik": "0001173382",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CFFN",
+    "name": "Capitol Federal Financial, Inc.",
+    "cik": "0001490906",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CMCT",
+    "name": "Creative Media & Community Trust Corp",
+    "cik": "0000908311",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CNEY",
+    "name": "CN ENERGY GROUP. INC.",
+    "cik": "0001780785",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "COCO",
+    "name": "Vita Coco Company, Inc.",
+    "cik": "0001482981",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "COO",
+    "name": "COOPER COMPANIES, INC.",
+    "cik": "0000711404",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CTAA",
+    "name": "Clearthink 1 Acquisition Corp.",
+    "cik": "0002094073",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CTBI",
+    "name": "COMMUNITY TRUST BANCORP INC /KY/",
+    "cik": "0000350852",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "CYAB",
+    "name": "CYABRA, INC.",
+    "cik": "0002032341",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "DTSS",
+    "name": "Datasea Intelligent Technology Ltd.",
+    "cik": "0002110423",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "DUOL",
+    "name": "Duolingo, Inc.",
+    "cik": "0001562088",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "DXPE",
+    "name": "DXP ENTERPRISES INC",
+    "cik": "0001020710",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ELE",
+    "name": "Elemental Royalty Corp",
+    "cik": "0002086771",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "EQPT",
+    "name": "EquipmentShare.com Inc",
+    "cik": "0001693736",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ERIE",
+    "name": "ERIE INDEMNITY CO",
+    "cik": "0000922621",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ESCA",
+    "name": "ESCALADE INC",
+    "cik": "0000033488",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "EUDA",
+    "name": "EUDA Health Holdings Ltd",
+    "cik": "0001847846",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "EXFY",
+    "name": "Expensify, Inc.",
+    "cik": "0001476840",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "FLD",
+    "name": "Fold Holdings, Inc.",
+    "cik": "0001889123",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "FLNA",
+    "name": "FILANA THERAPEUTICS, INC.",
+    "cik": "0001069530",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "FRPT",
+    "name": "Freshpet, Inc.",
+    "cik": "0001611647",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "GANX",
+    "name": "Gain Therapeutics, Inc.",
+    "cik": "0001819411",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "GCGR",
+    "name": "General Catalyst Global Resilience Merger Corp.",
+    "cik": "0002108962",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "GILT",
+    "name": "GILAT SATELLITE NETWORKS LTD",
+    "cik": "0000897322",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "GLXY",
+    "name": "Galaxy Digital Inc.",
+    "cik": "0001859392",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "GUAC",
+    "name": "Berto Acquisition Corp. II",
+    "cik": "0002081515",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "HTCO",
+    "name": "High-Trend International Group",
+    "cik": "0001928948",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "HWH",
+    "name": "HWH International Inc.",
+    "cik": "0001897245",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "IBAC",
+    "name": "IB Acquisition Corp.",
+    "cik": "0001998781",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ILLU",
+    "name": "Illumination Acquisition Corp. I",
+    "cik": "0002101135",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "IMA",
+    "name": "ImageneBio, Inc.",
+    "cik": "0001835579",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "INLF",
+    "name": "INLIF Ltd",
+    "cik": "0001991592",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "IPW",
+    "name": "iPower Inc.",
+    "cik": "0001830072",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "IRTC",
+    "name": "iRhythm Holdings, Inc.",
+    "cik": "0001388658",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ISPC",
+    "name": "iSpecimen Inc.",
+    "cik": "0001558569",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "JEM",
+    "name": "707 Cayman Holdings Ltd.",
+    "cik": "0002018222",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "JG",
+    "name": "Aurora Mobile Ltd",
+    "cik": "0001737339",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "JJSF",
+    "name": "J&J SNACK FOODS CORP",
+    "cik": "0000785956",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "JOUT",
+    "name": "JOHNSON OUTDOORS INC",
+    "cik": "0000788329",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "JVA",
+    "name": "COFFEE HOLDING CO INC",
+    "cik": "0001007019",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "KIDZ",
+    "name": "KIDZ AI Inc.",
+    "cik": "0002022308",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "KLIC",
+    "name": "KULICKE & SOFFA INDUSTRIES INC",
+    "cik": "0000056978",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "KOYN",
+    "name": "CSLM Digital Asset Acquisition Corp III, Ltd",
+    "cik": "0002068454",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "KRYS",
+    "name": "Krystal Biotech, Inc.",
+    "cik": "0001711279",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "LFAC",
+    "name": "Leapfrog Acquisition Corp",
+    "cik": "0002084563",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "LFCR",
+    "name": "LIFECORE BIOMEDICAL, INC. \\DE\\",
+    "cik": "0001005286",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "LNSR",
+    "name": "LENSAR, Inc.",
+    "cik": "0001320350",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "LUNR",
+    "name": "Intuitive Machines, Inc.",
+    "cik": "0001844452",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "LX",
+    "name": "LexinFintech Holdings Ltd.",
+    "cik": "0001708259",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MAT",
+    "name": "MATTEL INC /DE/",
+    "cik": "0000063276",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MDB",
+    "name": "MongoDB, Inc.",
+    "cik": "0001441816",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MGRT",
+    "name": "Mega Fortune Co Ltd",
+    "cik": "0002033377",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MOB",
+    "name": "Mobilicom Ltd",
+    "cik": "0001898643",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MOVE",
+    "name": "Corvex, Inc.",
+    "cik": "0001734750",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MTC",
+    "name": "MMTEC, INC.",
+    "cik": "0001742518",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "MYPS",
+    "name": "PLAYSTUDIOS, Inc.",
+    "cik": "0001823878",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "NSYS",
+    "name": "NORTECH SYSTEMS INC",
+    "cik": "0000722313",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OACC",
+    "name": "Oaktree Acquisition Corp. III Life Sciences",
+    "cik": "0002029769",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OBIO",
+    "name": "Orchestra BioMed Holdings, Inc.",
+    "cik": "0001814114",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OIO",
+    "name": "OIO Group",
+    "cik": "0001957538",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OLB",
+    "name": "OLB GROUP, INC.",
+    "cik": "0001314196",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OM",
+    "name": "Outset Medical, Inc.",
+    "cik": "0001484612",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OMDA",
+    "name": "Omada Health, Inc.",
+    "cik": "0001611115",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ONEG",
+    "name": "OneConstruction Group Ltd",
+    "cik": "0002030834",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "OSUR",
+    "name": "ORASURE TECHNOLOGIES INC",
+    "cik": "0001116463",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PBYI",
+    "name": "PUMA BIOTECHNOLOGY, INC.",
+    "cik": "0001401667",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PEBO",
+    "name": "PEOPLES BANCORP INC",
+    "cik": "0000318300",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PETS",
+    "name": "PETMED EXPRESS INC",
+    "cik": "0001040130",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PFSA",
+    "name": "Profusa, Inc.",
+    "cik": "0001859807",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PLTK",
+    "name": "Playtika Holding Corp.",
+    "cik": "0001828016",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PLYX",
+    "name": "Polaryx Therapeutics, Inc.",
+    "cik": "0002075320",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PODC",
+    "name": "PodcastOne, Inc.",
+    "cik": "0001940177",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "PWP",
+    "name": "Perella Weinberg Partners",
+    "cik": "0001777835",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "QNST",
+    "name": "QUINSTREET, INC",
+    "cik": "0001117297",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RCMT",
+    "name": "RCM TECHNOLOGIES, INC.",
+    "cik": "0000700841",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RDCM",
+    "name": "RADCOM LTD",
+    "cik": "0001016838",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RELY",
+    "name": "Remitly Global, Inc.",
+    "cik": "0001782170",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "REVB",
+    "name": "REVELATION BIOSCIENCES, INC.",
+    "cik": "0001810560",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RFAM",
+    "name": "RF Acquisition Corp III",
+    "cik": "0002091712",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RICK",
+    "name": "RCI HOSPITALITY HOLDINGS, INC.",
+    "cik": "0000935419",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RIME",
+    "name": "Algorhythm Holdings, Inc.",
+    "cik": "0000923601",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ROCK",
+    "name": "GIBRALTAR INDUSTRIES, INC.",
+    "cik": "0000912562",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RPID",
+    "name": "RAPID MICRO BIOSYSTEMS, INC.",
+    "cik": "0001380106",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RPRX",
+    "name": "Royalty Pharma plc",
+    "cik": "0001802768",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "RUBI",
+    "name": "Rubico Inc.",
+    "cik": "0001943421",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SFWL",
+    "name": "SHENGFENG DEVELOPMENT Ltd",
+    "cik": "0001863218",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SKYE",
+    "name": "Skye Bioscience, Inc.",
+    "cik": "0001516551",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SNWV",
+    "name": "SANUWAVE Health, Inc.",
+    "cik": "0001417663",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SORN",
+    "name": "Soren Acquisition Corp.",
+    "cik": "0002086263",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SPWH",
+    "name": "SPORTSMAN'S WAREHOUSE HOLDINGS, INC.",
+    "cik": "0001132105",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SSRM",
+    "name": "SSR MINING INC.",
+    "cik": "0000921638",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "STLD",
+    "name": "STEEL DYNAMICS INC",
+    "cik": "0001022671",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "STRL",
+    "name": "STERLING INFRASTRUCTURE, INC.",
+    "cik": "0000874238",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "SVRN",
+    "name": "OceanPal Inc.",
+    "cik": "0001869467",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "TGHL",
+    "name": "GrowHub Ltd",
+    "cik": "0002024114",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "VCYT",
+    "name": "VERACYTE, INC.",
+    "cik": "0001384101",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "VERU",
+    "name": "VERU INC.",
+    "cik": "0000863894",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "VGAS",
+    "name": "Verde Clean Fuels, Inc.",
+    "cik": "0001841425",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "VIVK",
+    "name": "Vivakor, Inc.",
+    "cik": "0001450704",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "VIVO",
+    "name": "VivoPower PLC",
+    "cik": "0001681348",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "WASH",
+    "name": "WASHINGTON TRUST BANCORP INC",
+    "cik": "0000737468",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "WXM",
+    "name": "WF International Ltd.",
+    "cik": "0001979610",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "XHLD",
+    "name": "TEN Holdings, Inc.",
+    "cik": "0002030954",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "XSLL",
+    "name": "Xsolla SPAC 1",
+    "cik": "0002088807",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ZBRA",
+    "name": "ZEBRA TECHNOLOGIES CORP",
+    "cik": "0000877212",
+    "sector": "Control candidate - Nasdaq"
+  },
+  {
+    "ticker": "ZKP",
+    "name": "Lafayette Digital Acquisition Corp. I",
+    "cik": "0002087447",
+    "sector": "Control candidate - Nasdaq"
+  }
+]

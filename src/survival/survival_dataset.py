@@ -4,17 +4,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from src.features.constants import MODEL_FEATURES
 
-FINAL_MODEL_FEATURES = [
-    "leverage",
-    "current_ratio",
-    "cash_ratio",
-    "return_on_assets",
-    "revenue_growth",
-    "operating_cash_flow_ratio",
-    "log_total_assets",
-    "operating_margin",
-]
 
 IDENTIFIER_COLUMNS = [
     "ticker",
@@ -496,7 +487,7 @@ def build_bankrupt_survival_dataset(
     )
 
     selected_features = (
-        FINAL_MODEL_FEATURES
+        MODEL_FEATURES
         if feature_columns is None
         else feature_columns
     )

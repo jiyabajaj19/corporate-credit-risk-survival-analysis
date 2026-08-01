@@ -4,21 +4,12 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.features.constants import MODEL_FEATURES
+
 from src.survival.survival_dataset import (
     normalize_cik_series,
 )
 
-
-DEFAULT_MODEL_FEATURES = [
-    "leverage",
-    "current_ratio",
-    "cash_ratio",
-    "return_on_assets",
-    "revenue_growth",
-    "operating_cash_flow_ratio",
-    "log_total_assets",
-    "operating_margin",
-]
 
 
 def load_control_features(
@@ -53,7 +44,7 @@ def load_control_features(
         "fiscal_period",
         "quarter_number",
         "end_date",
-        *DEFAULT_MODEL_FEATURES,
+        *MODEL_FEATURES,
     }
 
     missing = required_columns - set(data.columns)
@@ -114,7 +105,7 @@ def select_eligible_control_quarters(
         )
 
     selected_features = (
-        DEFAULT_MODEL_FEATURES
+        MODEL_FEATURES
         if feature_columns is None
         else feature_columns
     )
@@ -290,7 +281,7 @@ def build_control_survival_intervals(
         "chapter",
         *[
             feature
-            for feature in DEFAULT_MODEL_FEATURES
+            for feature in MODEL_FEATURES
             if feature in survival.columns
         ],
     ]
