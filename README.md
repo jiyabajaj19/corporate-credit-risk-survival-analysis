@@ -377,6 +377,21 @@ python -m pytest -v
 
 ---
 
+## Makefile Commands
+
+The repository includes a Makefile to simplify common tasks.
+
+| Command | Description |
+|---------|-------------|
+| `make test` | Run the complete test suite |
+| `make sec` | Process SEC Company Facts into cleaned quarterly financial features |
+| `make bankrupt` | Build the bankrupt-firm survival dataset |
+| `make controls` | Build the control-firm survival dataset |
+| `make real` | Combine bankrupt and control firms into the final survival dataset |
+| `make simulation` | Run the Monte Carlo simulation study and generate summary reports |
+| `make pipeline` | Execute the complete real-data survival-data pipeline |
+| `make clean` | Remove generated outputs |
+
 # Technologies
 
 - Python
