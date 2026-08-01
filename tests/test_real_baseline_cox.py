@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
-import pytest
+from datetime import timedelta
 
-from src.models.real_time_varying_cox import (
-    fit_ridge_real_time_varying_cox,
-    fit_unpenalized_real_time_varying_cox,
+from src.models.real_baseline_cox import (
+    collapse_to_baseline_data,
+    fit_real_left_truncated_cox,
+    fit_real_naive_cox,
 )
 
 
@@ -26,6 +27,13 @@ def create_example_data() -> pd.DataFrame:
     for firm_index in range(
         number_of_firms
     ):
+        first_date = (
+            pd.Timestamp("2012-01-01")
+            + timedelta(
+                days=30 * int(firm_index)
+                )
+            )
+
         baseline_leverage = rng.normal(
             0.35,
             0.12,
@@ -39,6 +47,13 @@ def create_example_data() -> pd.DataFrame:
         for quarter in range(
             number_of_quarters
         ):
+            end_date = (
+                first_date
+                + timedelta(
+                    days=91 * int(quarter)
+                )
+            )
+
             rows.append(
                 {
                     "firm_id": f"F{firm_index}",
@@ -50,6 +65,17 @@ def create_example_data() -> pd.DataFrame:
                         firm_index in event_firms
                         and quarter
                         == number_of_quarters - 1
+                    ),
+                    "end_date": end_date,
+                    "event_date": (
+                        end_date
+                        if (
+                            firm_index
+                            in event_firms
+                            and quarter
+                            == number_of_quarters - 1
+                        )
+                        else pd.NaT
                     ),
                     "leverage": (
                         baseline_leverage
@@ -73,21 +99,32 @@ def create_example_data() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def test_unpenalized_real_model_fits() -> None:
-    result = (
-        fit_unpenalized_real_time_varying_cox(
-            data=create_example_data(),
-            feature_columns=FEATURES,
-        )
+def test_collapse_to_baseline_data() -> None:
+    baseline = collapse_to_baseline_data(
+        data=create_example_data(),
+        feature_columns=FEATURES,
     )
 
-    assert result.model_name == (
-        "Time-Varying Cox"
+    assert len(baseline) == 60
+    assert baseline["firm_id"].nunique() == 60
+    assert baseline["event"].sum() == 24
+
+    assert (
+        baseline["duration"] > 0
+    ).all()
+
+
+def test_real_naive_cox_fits() -> None:
+    result = fit_real_naive_cox(
+        data=create_example_data(),
+        feature_columns=FEATURES,
     )
 
     assert result.number_of_firms == 60
     assert result.number_of_events == 24
-    assert result.penalizer == 0.0
+    assert result.model_name == (
+        "Naive Baseline Cox"
+    )
 
     assert np.isfinite(
         result.coefficients[
@@ -95,40 +132,22 @@ def test_unpenalized_real_model_fits() -> None:
         ]
     ).all()
 
-    assert (
-        result.coefficients[
-            "hazard_ratio"
-        ] > 0
-    ).all()
 
-
-def test_ridge_real_model_fits() -> None:
-    result = (
-        fit_ridge_real_time_varying_cox(
-            data=create_example_data(),
-            feature_columns=FEATURES,
-            penalizer=0.10,
-        )
+def test_real_left_truncated_cox_fits() -> None:
+    result = fit_real_left_truncated_cox(
+        data=create_example_data(),
+        feature_columns=FEATURES,
     )
+
+    assert result.number_of_firms == 60
+    assert result.number_of_events == 24
 
     assert result.model_name == (
-        "Ridge Time-Varying Cox"
+        "Left-Truncated Baseline Cox"
     )
 
-    assert result.penalizer == pytest.approx(
-        0.10
-    )
-
-    assert result.l1_ratio == 0.0
-
-
-def test_ridge_requires_positive_penalty() -> None:
-    with pytest.raises(
-        ValueError,
-        match="positive",
-    ):
-        fit_ridge_real_time_varying_cox(
-            data=create_example_data(),
-            feature_columns=FEATURES,
-            penalizer=0.0,
-        )
+    assert np.isfinite(
+        result.coefficients[
+            "coefficient"
+        ]
+    ).all()
