@@ -5,6 +5,16 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+FINAL_MODEL_FEATURES = [
+    "leverage",
+    "current_ratio",
+    "cash_ratio",
+    "return_on_assets",
+    "revenue_growth",
+    "operating_cash_flow_ratio",
+    "log_total_assets",
+    "operating_margin",
+]
 
 IDENTIFIER_COLUMNS = [
     "ticker",
@@ -460,6 +470,7 @@ def build_bankrupt_survival_dataset(
     event_path: str | Path,
     minimum_quarters: int = 4,
     maximum_lookback_years: float | None = 8.0,
+    feature_columns: list[str] | None = None,
 ) -> pd.DataFrame:
     """
     Run the full bankrupt-firm survival dataset construction.
@@ -484,8 +495,31 @@ def build_bankrupt_survival_dataset(
         ),
     )
 
+    selected_features = (
+        FINAL_MODEL_FEATURES
+        if feature_columns is None
+        else feature_columns
+    )
+
+    missing_features = (
+        set(selected_features)
+        - set(pre_event.columns)
+    )
+
+    if missing_features:
+        raise ValueError(
+            "Missing requested bankruptcy features: "
+            f"{sorted(missing_features)}"
+        )
+
+    # Filter before constructing intervals so the final retained
+    # observation still receives the bankruptcy event.
+    complete_pre_event = pre_event.dropna(
+        subset=selected_features
+    ).copy()
+
     survival = build_bankrupt_survival_intervals(
-        pre_event,
+        complete_pre_event,
         minimum_quarters=minimum_quarters,
     )
 
