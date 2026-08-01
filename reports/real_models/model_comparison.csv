@@ -1,0 +1,5 @@
+model,number_of_firms,number_of_rows,number_of_events,number_of_features,penalizer,l1_ratio,log_likelihood
+Naive Baseline Cox,88,88,40,8,0.0,0.0,-145.82025583166282
+Left-Truncated Baseline Cox,88,88,40,8,0.0,0.0,-146.3120690179817
+Time-Varying Cox,88,905,40,8,0.0,0.0,-131.7908172053942
+Ridge Time-Varying Cox,88,905,40,8,0.25,0.0,-153.99990149246696

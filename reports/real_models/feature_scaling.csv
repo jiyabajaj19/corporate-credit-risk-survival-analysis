@@ -1,0 +1,33 @@
+model,feature,mean,standard_deviation
+Naive Baseline Cox,leverage,0.32274690919342963,0.25403539128212904
+Naive Baseline Cox,current_ratio,1.9186792171089095,1.396792970531218
+Naive Baseline Cox,cash_ratio,0.4669757602844016,0.6566048277442834
+Naive Baseline Cox,return_on_assets,-0.011635871283548734,0.08430492972439821
+Naive Baseline Cox,revenue_growth,-0.042694312579790755,0.4054794104488404
+Naive Baseline Cox,operating_cash_flow_ratio,0.16511373508535312,0.319990425811595
+Naive Baseline Cox,log_total_assets,20.988743220347885,1.78675825880934
+Naive Baseline Cox,operating_margin,0.0009069994027598853,0.3708454224981735
+Left-Truncated Baseline Cox,leverage,0.32274690919342963,0.25403539128212904
+Left-Truncated Baseline Cox,current_ratio,1.9186792171089095,1.396792970531218
+Left-Truncated Baseline Cox,cash_ratio,0.4669757602844016,0.6566048277442834
+Left-Truncated Baseline Cox,return_on_assets,-0.011635871283548734,0.08430492972439821
+Left-Truncated Baseline Cox,revenue_growth,-0.042694312579790755,0.4054794104488404
+Left-Truncated Baseline Cox,operating_cash_flow_ratio,0.16511373508535312,0.319990425811595
+Left-Truncated Baseline Cox,log_total_assets,20.988743220347885,1.78675825880934
+Left-Truncated Baseline Cox,operating_margin,0.0009069994027598853,0.3708454224981735
+Time-Varying Cox,leverage,0.3336571760166066,0.2920207533511347
+Time-Varying Cox,current_ratio,2.012229338030616,1.2723547290684398
+Time-Varying Cox,cash_ratio,0.45398896310266434,0.5535221213850864
+Time-Varying Cox,return_on_assets,-0.005438805156219691,0.058605359336713944
+Time-Varying Cox,revenue_growth,0.018994079239691083,0.3567437746255303
+Time-Varying Cox,operating_cash_flow_ratio,0.12185972075676348,0.26979866124911867
+Time-Varying Cox,log_total_assets,21.34717016332618,1.6932602422263914
+Time-Varying Cox,operating_margin,0.017309989987179912,0.31124025125236865
+Ridge Time-Varying Cox,leverage,0.3336571760166066,0.2920207533511347
+Ridge Time-Varying Cox,current_ratio,2.012229338030616,1.2723547290684398
+Ridge Time-Varying Cox,cash_ratio,0.45398896310266434,0.5535221213850864
+Ridge Time-Varying Cox,return_on_assets,-0.005438805156219691,0.058605359336713944
+Ridge Time-Varying Cox,revenue_growth,0.018994079239691083,0.3567437746255303
+Ridge Time-Varying Cox,operating_cash_flow_ratio,0.12185972075676348,0.26979866124911867
+Ridge Time-Varying Cox,log_total_assets,21.34717016332618,1.6932602422263914
+Ridge Time-Varying Cox,operating_margin,0.017309989987179912,0.31124025125236865
