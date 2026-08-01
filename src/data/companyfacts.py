@@ -151,7 +151,14 @@ def get_company_metadata(
     payload: dict[str, Any],
     source_path: str | Path,
 ) -> ParsedCompany:
-    """Extract identifying metadata from a Company Facts payload."""
+    """
+    Extract identifying metadata from a Company Facts payload.
+
+    Some SEC Company Facts responses do not include entityName.
+    In that case, use the ticker inferred from the cached filename
+    as a safe fallback so one malformed company does not stop the
+    entire batch.
+    """
     cik_value = payload.get("cik")
 
     if cik_value is None:
@@ -161,21 +168,21 @@ def get_company_metadata(
 
     cik = str(cik_value).zfill(10)
 
+    ticker = infer_ticker_from_filename(
+        source_path
+    )
+
     entity_name = str(
         payload.get("entityName", "")
     ).strip()
 
     if not entity_name:
-        raise ValueError(
-            f"Missing entity name in {source_path}"
-        )
+        entity_name = ticker
 
     return ParsedCompany(
         cik=cik,
         entity_name=entity_name,
-        ticker=infer_ticker_from_filename(
-            source_path
-        ),
+        ticker=ticker,
         source_file=Path(source_path).name,
     )
 
@@ -435,7 +442,14 @@ def deduplicate_financial_facts(
 def extract_directory_financial_facts(
     input_directory: str | Path,
 ) -> pd.DataFrame:
-    """Extract and combine all JSON files in a directory."""
+    """
+    Extract and combine supported facts from every Company Facts
+    JSON file in a directory.
+
+    Files with malformed JSON, missing Company Facts content, or no
+    supported observations are skipped so one unusable SEC response
+    does not stop a large batch.
+    """
     directory = Path(input_directory)
 
     if not directory.exists():
@@ -452,25 +466,58 @@ def extract_directory_financial_facts(
             f"No JSON files found in: {directory}"
         )
 
-    company_tables = [
-        extract_company_financial_facts(path)
-        for path in json_files
-    ]
+    company_tables: list[pd.DataFrame] = []
+    skipped_files: list[tuple[str, str]] = []
 
-    nonempty_tables = [
-        table
-        for table in company_tables
-        if not table.empty
-    ]
+    for path in json_files:
+        try:
+            table = extract_company_financial_facts(
+                path
+            )
 
-    if not nonempty_tables:
+            if table.empty:
+                skipped_files.append(
+                    (
+                        path.name,
+                        "No supported financial facts",
+                    )
+                )
+                continue
+
+            company_tables.append(table)
+
+        except (
+            ValueError,
+            KeyError,
+            TypeError,
+            json.JSONDecodeError,
+        ) as error:
+            skipped_files.append(
+                (
+                    path.name,
+                    str(error),
+                )
+            )
+
+    if skipped_files:
+        print()
+        print("Skipped SEC files")
+        print("-----------------")
+
+        for filename, reason in skipped_files:
+            print(
+                f"{filename}: {reason}"
+            )
+
+        print()
+
+    if not company_tables:
         return _empty_fact_table()
 
     return pd.concat(
-        nonempty_tables,
+        company_tables,
         ignore_index=True,
     )
-
 
 def create_fact_coverage_summary(
     facts: pd.DataFrame,

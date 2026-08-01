@@ -366,59 +366,83 @@ def _get_observation(
     fiscal_period: str,
     period_type: str,
 ) -> pd.Series | None:
-    candidates = group[
-        group["fiscal_period"]
-        == fiscal_period
+    """
+    Select the best observation for one fiscal period and period type.
+
+    Returns None when no suitable SEC observation exists.
+    """
+    candidates = group.loc[
+        group["fiscal_period"] == fiscal_period
     ].copy()
 
-    if period_type == "direct_quarter":
-        candidates = candidates[
-            candidates["is_direct_quarter"]
-        ]
+    if candidates.empty:
+        return None
 
-        # A duration frame is stronger evidence than duration alone.
-        candidates = candidates.assign(
-            period_preference=np.where(
-                candidates["is_duration_frame"],
-                0,
-                1,
-            )
+    if period_type == "direct_quarter":
+        candidates = candidates.loc[
+            candidates["is_direct_quarter"]
+        ].copy()
+
+        if candidates.empty:
+            return None
+
+        candidates["_period_preference"] = np.where(
+            candidates["is_duration_frame"],
+            0,
+            1,
         )
 
     elif period_type == "half_year_ytd":
-        candidates = candidates[
+        candidates = candidates.loc[
             candidates["is_half_year_ytd"]
-        ].assign(period_preference=0)
+        ].copy()
+
+        if candidates.empty:
+            return None
+
+        candidates["_period_preference"] = 0
 
     elif period_type == "nine_month_ytd":
-        candidates = candidates[
+        candidates = candidates.loc[
             candidates["is_nine_month_ytd"]
-        ].assign(period_preference=0)
+        ].copy()
+
+        if candidates.empty:
+            return None
+
+        candidates["_period_preference"] = 0
 
     elif period_type == "annual":
-        candidates = candidates[
+        candidates = candidates.loc[
             candidates["is_annual_duration"]
-        ].assign(period_preference=0)
+        ].copy()
+
+        if candidates.empty:
+            return None
+
+        candidates["_period_preference"] = 0
 
     else:
         raise ValueError(
             f"Unsupported period type: {period_type}"
         )
 
-    if candidates.empty:
-        return None
+    # Resetting the index avoids pathological assignment behavior
+    # for some large SEC groups with repeated source indices.
+    candidates = candidates.reset_index(drop=True)
 
-    candidates["is_amendment"] = (
+    candidates["_is_amendment"] = (
         candidates["form"]
         .fillna("")
+        .astype(str)
         .str.endswith("/A")
     )
 
     candidates = candidates.sort_values(
         by=[
-            "period_preference",
+            "_period_preference",
             "tag_priority",
-            "is_amendment",
+            "_is_amendment",
             "filed_date",
         ],
         ascending=[
@@ -429,6 +453,9 @@ def _get_observation(
         ],
         na_position="last",
     )
+
+    if candidates.empty:
+        return None
 
     return candidates.iloc[0]
 
