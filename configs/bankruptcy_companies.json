@@ -1,0 +1,602 @@
+[
+  {
+    "ticker": "CIK0000810332",
+    "name": "Mesa Air Group, Inc.",
+    "cik": "0000810332",
+    "sector": "Air Transportation, Scheduled"
+  },
+  {
+    "ticker": "CIK0000918944",
+    "name": "MediaNews Group, Inc. (Affiliated Media, Inc. only)",
+    "cik": "0000918944",
+    "sector": "Newspapers: Publishing, or Publishing and Printing"
+  },
+  {
+    "ticker": "CIK0000925178",
+    "name": "Movie Gallery, Inc. (2010)",
+    "cik": "0000925178",
+    "sector": "Video Tape Rental"
+  },
+  {
+    "ticker": "CIK0001073429",
+    "name": "U.S. Concrete, Inc.",
+    "cik": "0001073429",
+    "sector": "Concrete Products, Except Block and Brick"
+  },
+  {
+    "ticker": "CIK0000949228",
+    "name": "Beach First National Bancshares, Inc.",
+    "cik": "0000949228",
+    "sector": "National Commercial Banks"
+  },
+  {
+    "ticker": "CIK0001304366",
+    "name": "Community Bancorp",
+    "cik": "0001304366",
+    "sector": "National Commercial Banks"
+  },
+  {
+    "ticker": "CIK0001085734",
+    "name": "Blockbuster Inc.",
+    "cik": "0001085734",
+    "sector": "Video Tape Rental"
+  },
+  {
+    "ticker": "CIK0000913665",
+    "name": "TerreStar Corporation (TerreStar Networks Inc. only) (2010)",
+    "cik": "0000913665",
+    "sector": "Communication Services, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0000874501",
+    "name": "Ambac Financial Group, Inc.",
+    "cik": "0000874501",
+    "sector": "Surety Insurance"
+  },
+  {
+    "ticker": "CIK0001178717",
+    "name": "Vertis, Inc. (2010)",
+    "cik": "0001178717",
+    "sector": "Advertising Agencies"
+  },
+  {
+    "ticker": "CIK0001095274",
+    "name": "First National Bancshares, Inc.",
+    "cik": "0001095274",
+    "sector": "National Commercial Banks"
+  },
+  {
+    "ticker": "CIK0001452384",
+    "name": "Seahawk Drilling, Inc.",
+    "cik": "0001452384",
+    "sector": "Drilling Oil and Gas Wells"
+  },
+  {
+    "ticker": "CIK0000940510",
+    "name": "Borders Group, Inc.",
+    "cik": "0000940510",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001047040",
+    "name": "Perkins & Marie Callenders Inc.",
+    "cik": "0001047040",
+    "sector": "Eating Places"
+  },
+  {
+    "ticker": "CIK0001160165",
+    "name": "ShengdaTech, Inc.",
+    "cik": "0001160165",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000724742",
+    "name": "Syms Corp.",
+    "cik": "0000724742",
+    "sector": "Family Clothing Stores"
+  },
+  {
+    "ticker": "CIK0000935724",
+    "name": "PMI Group, Inc.",
+    "cik": "0000935724",
+    "sector": "Surety Insurance"
+  },
+  {
+    "ticker": "CIK0000058361",
+    "name": "Lee Enterprises, Incorporated",
+    "cik": "0000058361",
+    "sector": "Newspapers: Publishing, or Publishing and Printing"
+  },
+  {
+    "ticker": "CIK0000032878",
+    "name": "Energy Conversion Devices, Inc.",
+    "cik": "0000032878",
+    "sector": "Semiconductors and Related Devices"
+  },
+  {
+    "ticker": "CIK0001268984",
+    "name": "Reddy Ice Holdings, Inc.",
+    "cik": "0001268984",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001396426",
+    "name": "Hawker Beechcraft Acquisition Company, LLC",
+    "cik": "0001396426",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000840264",
+    "name": "Capitol Bancorp Ltd.",
+    "cik": "0000840264",
+    "sector": "National Commercial Banks"
+  },
+  {
+    "ticker": "CIK0001358057",
+    "name": "LifeCare Holdings, Inc.",
+    "cik": "0001358057",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000930835",
+    "name": "Edison Mission Energy",
+    "cik": "0000930835",
+    "sector": "Electric Services"
+  },
+  {
+    "ticker": "CIK0000865570",
+    "name": "THQ Inc.",
+    "cik": "0000865570",
+    "sector": "Prepackaged Software"
+  },
+  {
+    "ticker": "CIK0000911002",
+    "name": "LodgeNet Interactive Corporation",
+    "cik": "0000911002",
+    "sector": "Communication Services, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0001551510",
+    "name": "Revel AC, Inc. (2013)",
+    "cik": "0001551510",
+    "sector": "Hotels and Motels"
+  },
+  {
+    "ticker": "CIK0001127342",
+    "name": "GMX Resources Inc.",
+    "cik": "0001127342",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001175108",
+    "name": "Rotech Healthcare Inc.",
+    "cik": "0001175108",
+    "sector": "Home Health Care Services"
+  },
+  {
+    "ticker": "CIK0001076700",
+    "name": "KIT digital, Inc.",
+    "cik": "0001076700",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000896842",
+    "name": "Orchard Supply Hardware Stores Corporation",
+    "cik": "0000896842",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001178336",
+    "name": "Hoku Corporation",
+    "cik": "0001178336",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001368900",
+    "name": "GateHouse Media, Inc.",
+    "cik": "0001368900",
+    "sector": "Newspapers: Publishing, or Publishing and Printing"
+  },
+  {
+    "ticker": "CIK0001441567",
+    "name": "MModal Inc.",
+    "cik": "0001441567",
+    "sector": "Computer Processing and Data Preparation and Processing Services"
+  },
+  {
+    "ticker": "CIK0001018005",
+    "name": "Coldwater Creek Inc.",
+    "cik": "0001018005",
+    "sector": "Women's Clothing Stores"
+  },
+  {
+    "ticker": "CIK0001326200",
+    "name": "Genco Shipping & Trading Limited",
+    "cik": "0001326200",
+    "sector": "Deep Sea Foreign Transportation of Freight"
+  },
+  {
+    "ticker": "CIK0000943320",
+    "name": "Trump Entertainment Resorts, Inc. (2014)",
+    "cik": "0000943320",
+    "sector": "Hotels and Motels"
+  },
+  {
+    "ticker": "CIK0001394954",
+    "name": "GT Advanced Technologies Inc.",
+    "cik": "0001394954",
+    "sector": "Semiconductors and Related Devices"
+  },
+  {
+    "ticker": "CIK0001121783",
+    "name": "American Spectrum Realty, Inc.",
+    "cik": "0001121783",
+    "sector": "Real Estate Investment Trusts"
+  },
+  {
+    "ticker": "CIK0000093456",
+    "name": "Standard Register Company",
+    "cik": "0000093456",
+    "sector": "Manifold Business Forms"
+  },
+  {
+    "ticker": "CIK0001060990",
+    "name": "Quicksilver Resources Inc.",
+    "cik": "0001060990",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0000837173",
+    "name": "Walter Energy, Inc.",
+    "cik": "0000837173",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000785968",
+    "name": "Miller Energy Resources, Inc.",
+    "cik": "0000785968",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001518909",
+    "name": "Black Elk Energy Offshore Operations, LLC",
+    "cik": "0001518909",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0000805305",
+    "name": "Quiksilver, Inc.",
+    "cik": "0000805305",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000351817",
+    "name": "Swift Energy Company",
+    "cik": "0000351817",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001037676",
+    "name": "Arch Coal, Inc.",
+    "cik": "0001037676",
+    "sector": "Bituminous Coal and Lignite Surface Mining"
+  },
+  {
+    "ticker": "CIK0001568832",
+    "name": "RCS Capital Corporation",
+    "cik": "0001568832",
+    "sector": "Security Brokers, Dealers, and Flotation Companies"
+  },
+  {
+    "ticker": "CIK0001385544",
+    "name": "Horsehead Holding Corp.",
+    "cik": "0001385544",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001159154",
+    "name": "Republic Airways Holdings Inc.",
+    "cik": "0001159154",
+    "sector": "Air Transportation, Scheduled"
+  },
+  {
+    "ticker": "CIK0001560443",
+    "name": "New Source Energy Partners L.P.",
+    "cik": "0001560443",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001343719",
+    "name": "Energy XXI Ltd",
+    "cik": "0001343719",
+    "sector": "Oil and Gas Field Exploration Services"
+  },
+  {
+    "ticker": "CIK0001022646",
+    "name": "Ultra Petroleum Corp. (2016)",
+    "cik": "0001022646",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0000077159",
+    "name": "Penn Virginia Corporation",
+    "cik": "0000077159",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001281922",
+    "name": "Triangle Petroleum Corp. (Triangle USA Petroleum Corp. only)",
+    "cik": "0001281922",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001615817",
+    "name": "C&J Energy Services Ltd.",
+    "cik": "0001615817",
+    "sector": "Oil and Gas Field Services, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0001490165",
+    "name": "Erickson Incorporated",
+    "cik": "0001490165",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001135361",
+    "name": "Illinois Power Generating Company",
+    "cik": "0001135361",
+    "sector": "Electric Services"
+  },
+  {
+    "ticker": "CIK0001116521",
+    "name": "Avaya Inc.",
+    "cik": "0001116521",
+    "sector": "Telephone and Telegraph Apparatus"
+  },
+  {
+    "ticker": "CIK0001384072",
+    "name": "Vanguard Natural Resources, LLC",
+    "cik": "0001384072",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001602367",
+    "name": "Adeptus Health Inc.",
+    "cik": "0001602367",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001030749",
+    "name": "GulfMark Offshore, Inc.",
+    "cik": "0001030749",
+    "sector": "Oil and Gas Field Machinery and Equipment"
+  },
+  {
+    "ticker": "CIK0000098222",
+    "name": "Tidewater Inc.",
+    "cik": "0000098222",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001503518",
+    "name": "21st Century Oncology Holdings, Inc.",
+    "cik": "0001503518",
+    "sector": "Offices and Clinics of Doctors of Medicine"
+  },
+  {
+    "ticker": "CIK0000786110",
+    "name": "Gymboree Corporation (2017)",
+    "cik": "0000786110",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001532288",
+    "name": "Armstrong Energy, Inc.",
+    "cik": "0001532288",
+    "sector": "Bituminous Coal and Lignite Surface Mining"
+  },
+  {
+    "ticker": "CIK0001058623",
+    "name": "Cumulus Media Inc.",
+    "cik": "0001058623",
+    "sector": "Radio Broadcasting Stations"
+  },
+  {
+    "ticker": "CIK0000316300",
+    "name": "EXCO Resources, Inc.",
+    "cik": "0000316300",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001584701",
+    "name": "Tops Holding II Corporation",
+    "cik": "0001584701",
+    "sector": "Grocery Stores"
+  },
+  {
+    "ticker": "CIK0001400891",
+    "name": "iHeartMedia, Inc.",
+    "cik": "0001400891",
+    "sector": "Radio Broadcasting Stations"
+  },
+  {
+    "ticker": "CIK0001431372",
+    "name": "Gastar Exploration Inc.",
+    "cik": "0001431372",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0000076321",
+    "name": "Parker Drilling Company",
+    "cik": "0000076321",
+    "sector": "Drilling Oil and Gas Wells"
+  },
+  {
+    "ticker": "CIK0001004980",
+    "name": "PG&E Corp. (Pacific Gas and Electric Co.) (2019)",
+    "cik": "0001004980",
+    "sector": "Electric and Other Sevices Combined"
+  },
+  {
+    "ticker": "CIK0001547638",
+    "name": "Southcross Energy Partners, L.P.",
+    "cik": "0001547638",
+    "sector": "Natural Gas Transmission"
+  },
+  {
+    "ticker": "CIK0001324189",
+    "name": "Orchids Paper Products Company",
+    "cik": "0001324189",
+    "sector": "Paper Mills"
+  },
+  {
+    "ticker": "CIK0001573166",
+    "name": "Jones Energy, Inc.",
+    "cik": "0001573166",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001603923",
+    "name": "Weatherford International plc",
+    "cik": "0001603923",
+    "sector": "Oil and Gas Field Machinery and Equipment"
+  },
+  {
+    "ticker": "CIK0001409916",
+    "name": "Nobilis Health Corp.",
+    "cik": "0001409916",
+    "sector": "General Medical and Surgical Hospitals"
+  },
+  {
+    "ticker": "CIK0000931336",
+    "name": "Dean Foods Company",
+    "cik": "0000931336",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001056386",
+    "name": "Internap Corporation",
+    "cik": "0001056386",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0000020520",
+    "name": "Frontier Communications Corporation",
+    "cik": "0000020520",
+    "sector": "Telephone Communications, Except Radiophones"
+  },
+  {
+    "ticker": "CIK0001051251",
+    "name": "J. Crew Group, Inc.",
+    "cik": "0001051251",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001166126",
+    "name": "J. C. Penney Company, Inc.",
+    "cik": "0001166126",
+    "sector": "Department Stores"
+  },
+  {
+    "ticker": "CIK0000878726",
+    "name": "Tuesday Morning Corporation",
+    "cik": "0000878726",
+    "sector": "Variety Stores"
+  },
+  {
+    "ticker": "CIK0001655020",
+    "name": "Extraction Oil & Gas, Inc.",
+    "cik": "0001655020",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001606180",
+    "name": "AAC Holdings, Inc.",
+    "cik": "0001606180",
+    "sector": "Specialty Outpatient Facilities, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0000813920",
+    "name": "CEC Entertainment, Inc.",
+    "cik": "0000813920",
+    "sector": "Eating Places"
+  },
+  {
+    "ticker": "CIK0000895126",
+    "name": "Chesapeake Energy Corporation",
+    "cik": "0000895126",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001512077",
+    "name": "Global Eagle Entertainment Inc.",
+    "cik": "0001512077",
+    "sector": "Communication Services, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0001659122",
+    "name": "Rosehill Resources Inc.",
+    "cik": "0001659122",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0000314808",
+    "name": "Valaris plc",
+    "cik": "0000314808",
+    "sector": "Drilling Oil and Gas Wells"
+  },
+  {
+    "ticker": "CIK0001735707",
+    "name": "Garrett Motion Inc.",
+    "cik": "0001735707",
+    "sector": "Motor Vehicle Parts and Accessories"
+  },
+  {
+    "ticker": "CIK0001661920",
+    "name": "Lonestar Resources US Inc.",
+    "cik": "0001661920",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001486159",
+    "name": "Oasis Petroleum Inc.",
+    "cik": "0001486159",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001517342",
+    "name": "Pacific Drilling S.A. (2020)",
+    "cik": "0001517342",
+    "sector": "Drilling Oil and Gas Wells"
+  },
+  {
+    "ticker": "CIK0000077281",
+    "name": "Pennsylvania Real Estate Investment Trust",
+    "cik": "0000077281",
+    "sector": "Real Estate Investment Trusts"
+  },
+  {
+    "ticker": "CIK0000922358",
+    "name": "Ferrellgas Partners, L.P. (Ferrellgas Partners Finance Corp.)",
+    "cik": "0000922358",
+    "sector": "Unknown"
+  },
+  {
+    "ticker": "CIK0001326089",
+    "name": "Sundance Energy Inc.",
+    "cik": "0001326089",
+    "sector": "Crude Petroleum and Natural Gas"
+  },
+  {
+    "ticker": "CIK0001655075",
+    "name": "Armstrong Flooring, Inc.",
+    "cik": "0001655075",
+    "sector": "Plastics Products, Not Elsewhere Classified"
+  },
+  {
+    "ticker": "CIK0000887921",
+    "name": "Revlon, Inc. (Revlon Consumer Products Corporation)",
+    "cik": "0000887921",
+    "sector": "Perfumes, Cosmetics, and Other Toilet Preparations"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "cik": "0000320193",
+    "sector": "Technology"
+  },
+  {
+    "ticker": "MSFT",
+    "name": "Microsoft Corporation",
+    "cik": "0000789019",
+    "sector": "Technology"
+  },
+  {
+    "ticker": "AMZN",
+    "name": "Amazon.com, Inc.",
+    "cik": "0001018724",
+    "sector": "Consumer Discretionary"
+  },
+  {
+    "ticker": "WMT",
+    "name": "Walmart Inc.",
+    "cik": "0000104169",
+    "sector": "Consumer Staples"
+  },
+  {
+    "ticker": "BA",
+    "name": "The Boeing Company",
+    "cik": "0000012927",
+    "sector": "Industrials"
+  }
+]

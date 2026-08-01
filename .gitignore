@@ -1,4 +1,6 @@
+# -----------------------------
 # Virtual environment
+# -----------------------------
 .venv/
 
 # Python cache
@@ -14,7 +16,7 @@ __pycache__/
 # VS Code
 .vscode/
 
-# Operating system files
+# Operating system
 .DS_Store
 Thumbs.db
 
@@ -26,20 +28,35 @@ htmlcov/
 # Logs
 *.log
 
-# Local data
+# -----------------------------
+# Raw datasets (downloadable)
+# -----------------------------
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/*/.gitkeep
 
+# -----------------------------
+# Processed datasets (reproducible)
+# -----------------------------
 data/processed/*
 !data/processed/.gitkeep
 
+# -----------------------------
+# Simulated datasets
+# -----------------------------
 data/simulated/*
 !data/simulated/.gitkeep
 
-# Generated figures
+# -----------------------------
+# Generated reports
+# -----------------------------
+reports/*.csv
+
 reports/figures/*
 !reports/figures/.gitkeep
 
+reports/simulation_study/*
+!reports/simulation_study/.gitkeep
 
-# Generated model results
-reports/*.csv
+# Generated images
+*.png
