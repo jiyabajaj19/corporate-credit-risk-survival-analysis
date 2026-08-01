@@ -1,51 +1,370 @@
 # Corporate Credit Risk Survival Analysis
 
-A research-oriented survival analysis pipeline for modeling corporate bankruptcy risk using **real SEC financial statements**, **LoPucki bankruptcy events**, and **time-varying Cox proportional hazards models**.
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](#testing)
+[![Status](https://img.shields.io/badge/status-complete-success.svg)](#project-status)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 
-Instead of treating default prediction as a static binary classification problem, this project models **time until bankruptcy** using quarterly financial statements and survival analysis techniques with **time-varying covariates**, **right censoring**, and **delayed entry**.
+An end-to-end corporate bankruptcy risk research pipeline combining:
+
+- SEC Company Facts financial statements
+- LoPucki bankruptcy filing events
+- quarterly financial-ratio engineering
+- start–stop survival datasets
+- Monte Carlo estimator validation
+- classical Cox models
+- time-varying Cox models
+- ridge regularization
+- firm-level grouped cross-validation
+
+The project treats bankruptcy as a **time-to-event problem** rather than a static binary classification problem. Each company contributes a sequence of quarterly financial observations, allowing its estimated bankruptcy hazard to change as its financial condition evolves.
 
 ---
 
-## Overview
+## Key Results
 
-This repository provides an end-to-end framework that:
+The final empirical dataset contains:
 
-- Downloads and processes SEC Company Facts data
-- Reconstructs standardized quarterly accounting statements
-- Engineers credit-risk financial ratios
-- Parses real bankruptcy events from the LoPucki Bankruptcy Research Database
-- Builds start-stop survival datasets for bankrupt and non-bankrupt firms
-- Supports simulation studies for validating survival estimators
-- Prepares data for time-varying Cox proportional hazards models
+| Metric | Value |
+|---|---:|
+| Companies | 88 |
+| Bankrupt companies | 40 |
+| Control companies | 48 |
+| Start–stop intervals | 905 |
+| Bankruptcy events | 40 |
+| Model predictors | 8 |
+| Cross-validation folds | 5 |
 
-The project combines both **simulation-based methodology validation** and **real-world financial data**.
+The tuned ridge time-varying Cox model improved out-of-sample discrimination:
+
+| Model | Mean validation concordance | Fold SD |
+|---|---:|---:|
+| Unpenalized time-varying Cox | 0.742 | 0.096 |
+| Tuned ridge time-varying Cox | **0.790** | 0.075 |
+
+The ridge penalty was selected through firm-level grouped cross-validation:
+
+**Selected ridge penalty:** `λ = 0.25`
+
+All quarterly observations belonging to a company remain in the same fold, preventing firm-level leakage.
+
+### Main findings
+
+- **Leverage** had a consistently positive relationship with bankruptcy hazard.
+- **Current ratio** had a consistently negative relationship with bankruptcy hazard.
+- Ridge regularization substantially reduced coefficient magnitude and instability.
+- The tuned ridge model improved mean validation concordance by approximately **0.048**.
+- The time-varying model used changing quarterly financial information that baseline models discard.
 
 ---
 
-# Project Structure
+## Project Pipeline
 
+```mermaid
+flowchart TD
+    A[SEC Company Facts API] --> B[Download company JSON files]
+    B --> C[Extract standardized accounting facts]
+    C --> D[Reconstruct quarterly financial panel]
+    D --> E[Engineer credit-risk ratios]
+    E --> F[Clean and validate financial features]
+
+    G[LoPucki Bankruptcy Cases] --> H[Normalize bankruptcy events and CIKs]
+
+    F --> I[Bankrupt company histories]
+    H --> I
+
+    F --> J[Non-bankrupt control histories]
+
+    I --> K[Bankrupt start-stop intervals]
+    J --> L[Censored control intervals]
+
+    K --> M[Combined real survival dataset]
+    L --> M
+
+    N[Simulated survival data] --> O[Monte Carlo study]
+    O --> P[Naive Cox]
+    O --> Q[Left-truncated Cox]
+    O --> R[Time-varying Cox]
+
+    M --> S[Naive baseline Cox]
+    M --> T[Left-truncated baseline Cox]
+    M --> U[Time-varying Cox]
+    M --> V[Ridge time-varying Cox]
+
+    U --> W[Firm-level grouped cross-validation]
+    V --> W
+
+    W --> X[Select ridge penalty]
+    X --> Y[Final tuned bankruptcy-risk model]
+    Y --> Z[Reports, coefficients, hazard ratios and figures]
 ```
-corporate-credit-risk-survival-analysis/
 
+---
+
+## Why Survival Analysis?
+
+Corporate bankruptcy is fundamentally a **time-to-event** problem rather than a binary classification problem. Instead of predicting only whether a company will fail, survival analysis estimates **how bankruptcy risk changes over time** as a firm's financial condition evolves.
+
+A conventional classifier asks:
+
+> **Will this company fail?**
+
+A survival model asks:
+
+> **How does a company's bankruptcy risk evolve over time, and when is failure most likely to occur?**
+
+Compared with traditional classification methods, survival analysis naturally accommodates:
+
+- **right-censored companies** that do not go bankrupt during the observation period,
+- **unequal follow-up durations** across firms,
+- **time-varying quarterly financial ratios**,
+- **delayed observation and varying entry times**,
+- **company-specific risk histories**, and
+- **interpretable hazard ratios** for financial predictors.
+
+This project uses a **time-varying Cox proportional hazards model**, allowing each firm's bankruptcy risk to change as new quarterly financial information becomes available.
+
+The model estimates the hazard function
+
+```text
+h(t) = h₀(t) × exp(β₁x₁(t) + β₂x₂(t) + ··· + βₚxₚ(t))
+```
+
+where:
+
+- **h₀(t)** is the baseline hazard,
+- **β** represents the estimated effect of each financial predictor, and
+- **x(t)** denotes quarterly financial variables that are updated over time.
+
+Consequently, a company's estimated bankruptcy risk is allowed to evolve each quarter rather than remaining fixed throughout the observation period. This makes the model substantially more realistic for corporate credit-risk analysis than approaches that rely on a single financial snapshot.
+
+## Ridge Regularization
+
+Financial ratios often contain overlapping information. For example:
+
+- **Current ratio** and **cash ratio** both capture short-term liquidity.
+- **Return on assets** and **operating margin** both measure profitability.
+- **Leverage** and **debt growth** both reflect debt burden.
+
+Such correlations can produce unstable coefficient estimates and reduce out-of-sample predictive performance, particularly when the number of bankruptcy events is modest.
+
+To improve model stability, the project fits a **ridge-regularized time-varying Cox model**, which maximizes the penalized partial log-likelihood:
+
+```text
+ℓ(β) − λ Σ β²
+```
+
+where:
+
+- **ℓ(β)** is the Cox partial log-likelihood,
+- **β** is the vector of regression coefficients,
+- **λ** controls the amount of L2 (ridge) regularization.
+
+As **λ** increases, coefficient estimates are shrunk toward zero, reducing variance caused by multicollinearity while retaining the relative importance of the strongest predictors. This generally improves the model's ability to generalize to previously unseen companies.
+
+The ridge penalty was selected using **grouped five-fold cross-validation**, ensuring that all quarterly observations from the same company remained within a single validation fold to prevent information leakage.
+
+**Selected ridge penalty:** `λ = 0.25`
+
+Candidate penalties evaluated:
+
+```text
+0.000, 0.001, 0.010, 0.050, 0.100, 0.250, 0.500, 1.000
+```
+
+The selected model achieved the highest mean validation concordance while using the **smallest penalty among statistically equivalent top-performing candidates**, providing a balance between predictive performance and coefficient stability.
+
+## Empirical Figures
+
+### Firm-level grouped cross-validation
+
+![Cross-validation penalty curve](reports/real_models/figures/cv_penalty_curve.png)
+
+The validation score increased as regularization was introduced and plateaued near the selected penalty.
+
+### Out-of-sample model comparison
+
+![Validation model comparison](reports/real_models/figures/validation_model_comparison.png)
+
+The tuned ridge model improved mean validation concordance from approximately **0.742** to **0.790**.
+
+### Coefficient shrinkage
+
+![Coefficient shrinkage](reports/real_models/figures/coefficient_comparison.png)
+
+Ridge regularization moved unstable coefficient estimates toward zero while retaining the strongest directional signals.
+
+### Tuned ridge hazard ratios
+
+![Ridge hazard-ratio forest plot](reports/real_models/figures/hazard_ratio_forest.png)
+
+Hazard ratios are reported per one-standard-deviation increase in each predictor because features are standardized before fitting.
+
+---
+
+## Simulation Study
+
+The project includes a separate Monte Carlo study to evaluate model behavior when the true coefficients are known.
+
+Three estimators were compared:
+
+1. Naive baseline Cox
+2. Left-truncated baseline Cox
+3. Time-varying Cox
+
+The simulation study evaluates:
+
+- coefficient bias
+- absolute bias
+- empirical standard deviation
+- mean estimated standard error
+- root mean squared error
+- confidence-interval coverage
+
+### Model-level simulation results
+
+| Model | Mean absolute bias | Mean RMSE | Mean coverage |
+|---|---:|---:|---:|
+| Baseline-at-entry Cox | 0.2920 | 0.3047 | 0.2170 |
+| Left-truncated baseline Cox | 0.2939 | 0.3066 | 0.2180 |
+| Time-varying Cox | **0.0632** | **0.1157** | **0.8080** |
+
+The simulation study provides methodological motivation for using changing quarterly financial covariates in the empirical analysis.
+
+---
+
+## Data Sources
+
+### SEC Company Facts
+
+Financial-statement observations are downloaded from the SEC Company Facts API.
+
+Standardized accounting concepts include:
+
+- cash and cash equivalents
+- current assets
+- current liabilities
+- total assets
+- total liabilities
+- short-term debt
+- long-term debt
+- total debt
+- stockholders’ equity
+- revenue
+- operating income
+- net income
+- operating cash flow
+- interest expense
+- depreciation and amortization
+
+Raw downloaded data is not committed to the repository.
+
+### LoPucki Bankruptcy Research Database
+
+Bankruptcy events are derived from the LoPucki Bankruptcy Research Database cases table.
+
+The processed event table includes:
+
+- company CIK
+- filing date
+- bankruptcy chapter
+- company name
+- disposition
+- industry information
+- pre-bankruptcy assets
+- pre-bankruptcy liabilities
+- pre-bankruptcy sales
+
+The source spreadsheet must be supplied locally because redistribution may be subject to the data provider’s terms.
+
+---
+
+## Financial Features
+
+The final empirical model uses eight centralized predictors defined in:
+
+```text
+src/features/constants.py
+```
+
+| Feature | Interpretation |
+|---|---|
+| `leverage` | Debt relative to assets |
+| `current_ratio` | Current assets relative to current liabilities |
+| `cash_ratio` | Cash relative to current liabilities |
+| `return_on_assets` | Net income relative to total assets |
+| `revenue_growth` | Quarter-to-quarter revenue growth |
+| `operating_cash_flow_ratio` | Operating cash flow relative to liabilities |
+| `log_total_assets` | Logarithmic firm-size measure |
+| `operating_margin` | Operating income relative to revenue |
+
+Additional engineered features are available for diagnostics and future model extensions:
+
+- debt growth
+- EBITDA margin
+- interest coverage
+- low-interest-coverage indicator
+
+---
+
+## Models
+
+### Simulation models
+
+- Naive Cox
+- Left-truncated Cox
+- Time-varying Cox
+
+### Real-data models
+
+- Naive baseline Cox
+- Calendar-time left-truncated baseline Cox
+- Unpenalized time-varying Cox
+- Ridge time-varying Cox
+
+The baseline models retain only the first financial observation for each firm. The time-varying models use the complete quarterly history.
+
+The empirical left-truncated model is a calendar-time benchmark. It is not identical to the delayed-entry mechanism used in the simulation study because the true beginning of each company’s risk history is not observed.
+
+---
+
+## Repository Structure
+
+```text
+corporate-credit-risk-survival-analysis/
+│
 ├── configs/
 │   ├── bankruptcy_companies.json
-│   └── companies.json
+│   ├── companies.json
+│   └── control_candidates.json
 │
 ├── data/
 │   ├── raw/
-│   │   ├── sec_companyfacts/
-│   │   ├── sec_companyfacts_bankrupt/
-│   │   ├── sec_companyfacts_controls/
-│   │   └── lopucki/
-│   │
 │   ├── processed/
 │   └── simulated/
 │
+├── docs/
+├── notebooks/
+│
 ├── reports/
 │   ├── figures/
+│   ├── real_models/
+│   │   ├── figures/
+│   │   └── model_selection/
 │   └── simulation_study/
 │
 ├── scripts/
+│   ├── download_companyfacts.py
+│   ├── parse_lopucki_cases.py
+│   ├── run_sec_pipeline.py
+│   ├── build_survival_dataset.py
+│   ├── build_control_survival_dataset.py
+│   ├── build_real_survival_dataset.py
+│   ├── run_time_varying_monte_carlo.py
+│   ├── generate_simulation_report.py
+│   ├── run_real_model_selection.py
+│   ├── run_real_model_comparison.py
+│   └── create_real_model_figures.py
 │
 ├── src/
 │   ├── data/
@@ -57,319 +376,161 @@ corporate-credit-risk-survival-analysis/
 │   └── survival/
 │
 ├── tests/
-│
 ├── Makefile
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# Data Sources
+## Installation
 
-## 1. SEC Company Facts
-
-Financial statement information is obtained from the SEC Company Facts API.
-
-Data includes:
-
-- Total Assets
-- Total Liabilities
-- Debt
-- Cash
-- Revenue
-- Operating Income
-- Net Income
-- Operating Cash Flow
-- Interest Expense
-- Depreciation & Amortization
-- Stockholders' Equity
-
-Financial statements are standardized across companies before feature engineering.
-
----
-
-## 2. LoPucki Bankruptcy Research Database
-
-Real bankruptcy filing events are obtained from the LoPucki Bankruptcy Research Database.
-
-Extracted information includes:
-
-- Filing date
-- Chapter
-- CIK
-- Company name
-- Industry
-- Assets before bankruptcy
-- Liabilities before bankruptcy
-
-These filings provide the event times used in survival analysis.
-
----
-
-# Pipeline
-
-## 1. SEC Data Processing
-
-```
-Company Facts JSON
-        │
-        ▼
-Extract Financial Facts
-        │
-        ▼
-Quarterly Panel Construction
-        │
-        ▼
-Financial Ratio Engineering
-        │
-        ▼
-Data Cleaning
-```
-
----
-
-## 2. Bankruptcy Event Processing
-
-```
-LoPucki Cases
-      │
-      ▼
-Normalize CIK
-      │
-      ▼
-Extract Filing Dates
-      │
-      ▼
-Bankruptcy Event Table
-```
-
----
-
-## 3. Survival Dataset Construction
-
-### Bankrupt Firms
-
-```
-Quarterly Features
-        │
-        ▼
-Match Bankruptcy Event
-        │
-        ▼
-Pre-event Quarters
-        │
-        ▼
-Start-Stop Survival Dataset
-```
-
-Each bankrupt company contributes quarterly observations ending at its bankruptcy filing.
-
----
-
-### Control Firms
-
-Non-bankrupt firms are treated as **right-censored observations**.
-
-```
-Quarterly Features
-        │
-        ▼
-Minimum History Filter
-        │
-        ▼
-Start-Stop Intervals
-        │
-        ▼
-Censored Survival Dataset
-```
-
----
-
-### Final Dataset
-
-```
-Bankrupt Firms
-        │
-        │
-        ├──────────────┐
-        │              │
-        ▼              ▼
- Controls        Bankruptcy
-        │              │
-        └──────┬───────┘
-               ▼
-      Real Survival Dataset
-```
-
----
-
-# Financial Features
-
-The project engineers several commonly used credit-risk indicators.
-
-### Liquidity
-
-- Current Ratio
-- Cash Ratio
-
-### Leverage
-
-- Leverage Ratio
-
-### Profitability
-
-- Return on Assets
-- Operating Margin
-- EBITDA Margin
-
-### Growth
-
-- Revenue Growth
-- Debt Growth
-
-### Cash Flow
-
-- Operating Cash Flow Ratio
-
-### Firm Size
-
-- Log Total Assets
-
-### Debt Service
-
-- Interest Coverage
-- Low Interest Coverage Indicator
-
----
-
-# Survival Analysis
-
-Each company contributes multiple quarterly observations.
-
-Example:
-
-| Company | Quarter | Start | Stop | Event |
-|----------|----------|------:|-----:|------:|
-| A | Q1 | 0.00 | 0.25 | 0 |
-| A | Q2 | 0.25 | 0.50 | 0 |
-| A | Q3 | 0.50 | 0.75 | 0 |
-| A | Q4 | 0.75 | 1.00 | 1 |
-
-Control firms have the final observation censored (`event = 0`).
-
----
-
-# Simulation Framework
-
-The repository also contains a complete simulation framework for validating survival estimators.
-
-Implemented components include:
-
-- Survival time generation
-- Left truncation
-- Delayed entry
-- Time-varying covariates
-- Monte Carlo experiments
-- Bias estimation
-- Coverage probability estimation
-
-Simulation outputs are saved in:
-
-```
-reports/simulation_study/
-```
-
----
-
-# Current Dataset
-
-Current processed data includes:
-
-### Bankrupt firms
-
-- Real bankruptcy events from LoPucki
-- Time-varying quarterly financial statements
-- Start-stop survival intervals
-
-### Control firms
-
-- SEC financial statements
-- Right-censored quarterly histories
-- Matching feature engineering pipeline
-
-The combined dataset contains both bankrupt and non-bankrupt firms prepared for time-varying survival modeling.
-
----
-
-# Running the Pipeline
-
-## Parse SEC Company Facts
+### 1. Clone the repository
 
 ```bash
-python -m scripts.build_raw_financial_facts
+git clone https://github.com/jiyabajaj19/corporate-credit-risk-survival-analysis.git
+cd corporate-credit-risk-survival-analysis
 ```
 
----
+### 2. Create a virtual environment
 
-## Construct Quarterly Financial Panel
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+macOS or Linux:
 
 ```bash
-python -m scripts.build_quarterly_panel
+python -m venv .venv
+source .venv/bin/activate
 ```
 
----
-
-## Engineer Financial Features
+### 3. Install dependencies
 
 ```bash
-python -m scripts.build_financial_features
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
 ---
 
-## Clean Features
+## Running the Project
+
+### Run the tests
 
 ```bash
-python -m scripts.clean_financial_features
+python -m pytest -v
 ```
 
----
+### Run the simulation study
 
-## Parse LoPucki Bankruptcy Events
+```bash
+python -m scripts.run_time_varying_monte_carlo
+python -m scripts.generate_simulation_report
+```
+
+### Parse bankruptcy events
+
+Place the LoPucki spreadsheet at:
+
+```text
+data/raw/lopucki/Cases.xlsx
+```
+
+Then run:
 
 ```bash
 python -m scripts.parse_lopucki_cases
 ```
 
----
+### Download SEC Company Facts
 
-## Build Bankrupt Survival Dataset
+```bash
+python -m scripts.download_companyfacts \
+  --email "your-email@example.com" \
+  --config configs/companies.json
+```
+
+Use a real email address in the SEC `User-Agent` as required by SEC access guidance.
+
+### Run the SEC feature pipeline
+
+```bash
+python -m scripts.run_sec_pipeline \
+  --input-directory data/raw/sec_companyfacts \
+  --output-prefix sec
+```
+
+### Build the survival datasets
 
 ```bash
 python -m scripts.build_survival_dataset
-```
-
----
-
-## Build Control Survival Dataset
-
-```bash
 python -m scripts.build_control_survival_dataset
-```
-
----
-
-## Combine Both Groups
-
-```bash
 python -m scripts.build_real_survival_dataset
 ```
 
+### Tune the ridge model
+
+```bash
+python -m scripts.run_real_model_selection
+```
+
+### Compare all real-data models
+
+```bash
+python -m scripts.run_real_model_comparison
+```
+
+### Generate empirical figures
+
+```bash
+python -m scripts.create_real_model_figures
+```
+
 ---
 
-# Testing
+## Makefile Commands
 
-Run the complete test suite:
+| Command | Description |
+|---|---|
+| `make test` | Run the complete test suite |
+| `make simulation` | Run the time-varying Monte Carlo study |
+| `make simulation-report` | Generate simulation tables and figures |
+| `make bankrupt-survival` | Build bankrupt-firm intervals |
+| `make control-survival` | Build censored control intervals |
+| `make real-survival` | Build the combined empirical dataset |
+| `make model-selection` | Tune the ridge penalty |
+| `make model-comparison` | Fit and compare all empirical models |
+| `make figures` | Generate real-model figures |
+| `make final-analysis` | Run selection, comparison and figures |
+| `make clean` | Remove generated outputs |
+
+Windows users may run the equivalent Python commands directly if GNU Make is not installed.
+
+---
+
+## Testing
+
+The repository includes tests for:
+
+- SEC JSON parsing
+- accounting concept standardization
+- quarterly duration reconstruction
+- financial-ratio construction
+- LoPucki event parsing
+- survival interval invariants
+- control-company censoring
+- baseline Cox models
+- time-varying Cox models
+- ridge regularization
+- grouped firm-level folds
+- penalty-grid evaluation
+- report generation
+
+Run:
 
 ```bash
 python -m pytest -v
@@ -377,63 +538,87 @@ python -m pytest -v
 
 ---
 
-## Makefile Commands
+## Reproducibility
 
-The repository includes a Makefile to simplify common tasks.
+Generated data and reports are excluded from version control where appropriate.
 
-| Command | Description |
-|---------|-------------|
-| `make test` | Run the complete test suite |
-| `make sec` | Process SEC Company Facts into cleaned quarterly financial features |
-| `make bankrupt` | Build the bankrupt-firm survival dataset |
-| `make controls` | Build the control-firm survival dataset |
-| `make real` | Combine bankrupt and control firms into the final survival dataset |
-| `make simulation` | Run the Monte Carlo simulation study and generate summary reports |
-| `make pipeline` | Execute the complete real-data survival-data pipeline |
-| `make clean` | Remove generated outputs |
+To reproduce the final empirical results:
 
-# Technologies
+```bash
+python -m scripts.build_survival_dataset
+python -m scripts.build_control_survival_dataset
+python -m scripts.build_real_survival_dataset
+python -m scripts.run_real_model_selection
+python -m scripts.run_real_model_comparison
+python -m scripts.create_real_model_figures
+```
 
-- Python
-- pandas
-- NumPy
-- SciPy
-- lifelines
-- requests
-- pytest
-- matplotlib
+The model-selection seed is fixed by default, so grouped folds are reproducible.
 
 ---
 
-# Repository Highlights
+## Limitations
 
-- Modular pipeline architecture
-- Real SEC financial statement processing
-- Real bankruptcy events
-- Time-varying survival datasets
-- Automated feature engineering
-- Simulation framework for estimator validation
-- Comprehensive unit testing
-- Reproducible data pipeline
-
----
-
-# Future Work
-
-Planned extensions include:
-
-- Time-varying Cox model estimation on the real dataset
-- Hazard ratio analysis
-- Concordance index evaluation
-- Kaplan-Meier survival curves
-- Coefficient visualization
-- Industry-level stratified survival models
-- Macroeconomic covariates
-- Regularized survival models
-- Benchmark comparison with binary default classifiers
+- The empirical sample is modest, with 40 observed bankruptcy events.
+- Controls are public SEC filers and are not currently matched exactly by industry and calendar time.
+- LoPucki primarily contains large public-company bankruptcies, limiting generalizability to smaller firms.
+- Company Facts tags vary across issuers and reporting periods.
+- The real-data left-truncation benchmark uses calendar entry time rather than the true beginning of financial distress.
+- Validation concordance is based on each firm’s final observed interval and is not a complete time-dependent concordance estimator.
+- Confidence intervals from the penalized model should be interpreted cautiously.
+- Macroeconomic and market-price covariates are not yet included.
 
 ---
 
-# License
+## Future Work
 
-This project is intended for academic research and educational purposes.
+Potential extensions include:
+
+- industry- and calendar-time-matched controls
+- macroeconomic covariates
+- market-price and volatility features
+- rolling prediction horizons
+- time-dependent AUC and Brier scores
+- bootstrap performance intervals
+- elastic-net Cox models
+- random survival forests
+- gradient-boosted survival models
+- external validation on a separate bankruptcy dataset
+
+---
+
+## Project Status
+
+The core research and modeling workflow is complete:
+
+- [x] SEC ingestion
+- [x] quarterly statement reconstruction
+- [x] feature engineering
+- [x] LoPucki bankruptcy events
+- [x] bankrupt survival intervals
+- [x] censored control intervals
+- [x] simulation study
+- [x] classical Cox models
+- [x] time-varying Cox model
+- [x] ridge regularization
+- [x] grouped cross-validation
+- [x] empirical model comparison
+- [x] publication-quality figures
+- [x] automated tests
+
+---
+
+## Author
+
+**Jiya Bajaj**
+
+University of Toronto  
+Computer Science, Statistics and Quantitative Finance interests
+
+---
+
+## License
+
+This project is available under the MIT License.
+
+The SEC and LoPucki data sources remain subject to their respective terms of use and redistribution policies.

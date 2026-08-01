@@ -132,3 +132,34 @@ def test_evaluate_penalizer_grid() -> None:
             "mean_validation_concordance"
         ].between(0.0, 1.0)
     ).all()
+
+def test_selected_penalty_has_best_score() -> None:
+    result = evaluate_penalizer_grid(
+        data=create_example_data(),
+        penalizer_grid=[
+            0.01,
+            0.10,
+            0.25,
+        ],
+        feature_columns=FEATURES,
+        number_of_folds=3,
+    )
+
+    best_score = result.penalty_summary[
+        "mean_validation_concordance"
+    ].max()
+
+    tied_best = result.penalty_summary.loc[
+        np.isclose(
+            result.penalty_summary[
+                "mean_validation_concordance"
+            ],
+            best_score,
+            atol=1e-10,
+            rtol=0.0,
+        )
+    ]
+
+    assert result.selected_penalizer == (
+        tied_best["penalizer"].min()
+    )

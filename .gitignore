@@ -60,3 +60,15 @@ reports/simulation_study/*
 
 # Generated images
 *.png
+
+# Keep selected README figures
+!reports/real_models/
+reports/real_models/*
+
+!reports/real_models/figures/
+reports/real_models/figures/*
+
+!reports/real_models/figures/cv_penalty_curve.png
+!reports/real_models/figures/validation_model_comparison.png
+!reports/real_models/figures/coefficient_comparison.png
+!reports/real_models/figures/hazard_ratio_forest.png

@@ -547,10 +547,27 @@ def evaluate_penalizer_grid(
         .reset_index(drop=True)
     )
 
+    best_mean_concordance = float(
+    penalty_summary[
+        "mean_validation_concordance"
+    ].max()
+    )
+
+    tied_best_models = penalty_summary.loc[
+        np.isclose(
+            penalty_summary[
+            "mean_validation_concordance"
+        ],
+        best_mean_concordance,
+        atol=1e-10,
+        rtol=0.0,
+        )
+    ].copy()
+
     selected_penalizer = float(
-        penalty_summary.iloc[0][
-            "penalizer"
-        ]
+        tied_best_models[
+        "penalizer"
+        ].min()
     )
 
     return RealModelSelectionResults(
